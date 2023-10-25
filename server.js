@@ -7,7 +7,7 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/temperature",(req,res)=>{
-    res.json({Temperature:20})
+    res.send(20)
 })
 
 
