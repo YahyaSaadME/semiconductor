@@ -1,15 +1,27 @@
 <html>
-    <body>
-        <h1 id="temp" style="margin: 10%;">Temperature</h1>
-        
-        
-        <script>
-            fetch("https://semi-mini-7je0ozmai-yahyasaadme.vercel.app/temperature",{
-                method:"GET"
-            }).then(e=> {return e.json()})
-            .then(e=>{
-                document.getElementById("temp") += e.Temperature
-            })
-        </script>
-    </body>
+  <body>
+    <h1 id="temp" style="margin: 10%">Temperature</h1>
+
+    <script>
+                  const url = 'https://semi-mini-7je0ozmai-yahyasaadme.vercel.app/temperature';
+
+      // Use the fetch function to make a GET request
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          // Parse the response as JSON
+          return response.json();
+        })
+        .then(data => {
+          // Handle the JSON data
+          console.log(data);
+        })
+        .catch(error => {
+          // Handle any errors that occurred during the fetch
+          console.error('Fetch error:', error);
+        });
+    </script>
+  </body>
 </html>
