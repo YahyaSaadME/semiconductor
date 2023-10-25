@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <h1 id="temp" style="margin: 10%;">Temperature</h1>
+        
+        
+        <script>
+            fetch("https://semi-mini-7je0ozmai-yahyasaadme.vercel.app/temperature",{
+                method:"GET"
+            }).then(e=> {return e.json()})
+            .then(e=>{
+                document.getElementById("temp") += e.Temperature
+            })
+        </script>
+    </body>
+</html>
