@@ -1,13 +1,14 @@
 const express = require("express")
+const path = require("path")
 const app = express()
 app.use(express.json())
 
 app.get("/",(req,res)=>{
-    res.json({msg:"Server is up and running"})
+    res.sendFile(path.join(__dirname,'./Components/index.html'))
 })
 
-app.get("/temperature",(req,res)=>{
-    res.send(20)
+app.get("/temp",(req,res)=>{
+    res.json({Temperature:20.65})
 })
 
 
